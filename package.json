@@ -15,5 +15,8 @@
     "url": "https://github.com/ShivankJain/first_server/issues"
   },
   "homepage": "https://github.com/ShivankJain/first_server#readme",
-  "description": ""
+  "description": "",
+  "dependencies": {
+    "url": "^0.11.3"
+  }
 }

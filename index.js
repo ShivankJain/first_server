@@ -1,8 +1,12 @@
 const http = require("http")  
 const fs = require("fs")
+const url = require("url")
 
 const myServer = http.createServer((req,res)=>{ 
+    if(req.url === '/favicon.ico'){ return res.end()}  // to avoid this entry in the log
    const log = `${Date.now()} ${req.url} New Request Received\n`
+   const myUrl = url.parse(req.url)
+   console.log(myUrl);
 //NON_BLOCKING   
     fs.appendFile("log.txt",log,(err,data)=>{
         switch(req.url){ 
