@@ -1,6 +1,4 @@
-const http = require("http")  
-const fs = require("fs")
-const url = require("url")
+
 const express = require("express")
 
 const app = express()  // Create a App
@@ -10,13 +8,10 @@ app.get("/", (req,res)=>{
 })
 
 app.get("/about", (req,res)=>{ 
-   return res.send("Hello From About Page")
+   return res.send(`Hello ${req.query.name}`)
 })
 
-const myServer = http.createServer(app)
-
-
-myServer.listen(8000,()=>{console.log("Server Has Started")})
+app.listen(8000,()=> console.log('Server Started !'))
 
 
 
@@ -24,6 +19,11 @@ myServer.listen(8000,()=>{console.log("Server Has Started")})
 
 
 /// NodeJS Way
+
+// const http = require("http")  
+// const fs = require("fs")
+// const url = require("url")
+
 
 // function myHandler(req,res){
 //     if(req.url === '/favicon.ico'){ return res.end()}  // to avoid this entry in the log
@@ -44,3 +44,8 @@ myServer.listen(8000,()=>{console.log("Server Has Started")})
              
 //      }) 
 // }
+
+// const myServer = http.createServer(app)
+
+
+// myServer.listen(8000,()=>{console.log("Server Has Started")})
