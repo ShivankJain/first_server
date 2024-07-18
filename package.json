@@ -17,7 +17,6 @@
   "homepage": "https://github.com/ShivankJain/first_server#readme",
   "description": "",
   "dependencies": {
-    "express": "^4.19.2",
-    "url": "^0.11.3"
+    "express": "^4.19.2"
   }
 }
